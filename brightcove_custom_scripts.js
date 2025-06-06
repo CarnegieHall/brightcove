@@ -143,18 +143,29 @@ function updateMetadataOnPage() {
 
             amazonButton.href = amazonLink;
             amazonButton.target = "_blank";
-            amazonButton.innerHTML = "Watch on Amazon Prime Video";
+            amazonButton.innerHTML = "Available on Prime Video";
             amazonButton.style = 'flex-basis: 50%; text-align: center; margin-left: 5px; padding: 0; color: black; border: 1px outset buttonborder; border-radius: 5px; background-color: buttonface; text-decoration: none; display: flex; align-items: center; justify-content: center; height: 100%;';
 
             appleButton.href = appleLink;
             appleButton.target = "_blank";
-            appleButton.innerHTML = "Watch on Apple TV";
+            appleButton.innerHTML = "Watch on the Apple TV app";
             appleButton.style = 'flex-basis: 50%; text-align: center; margin-right: 5px; padding: 0; color: black; border: 1px outset buttonborder; border-radius: 5px; background-color: buttonface; text-decoration: none; display: flex; align-items: center; justify-content: center; height: 100%;';
         
             buttonDiv.appendChild(appleButton);
             buttonDiv.appendChild(amazonButton);
 
             parentDiv.appendChild(buttonDiv);
+            
+            // create the additional line of text below the buttons
+            let infoDiv = document.createElement('div');
+            infoDiv.id = 'full-distro-info';
+            infoDiv.innerText = "Carnegie Hall+ is available on the Apple TV app, Prime Video Channels, Spectrum, Xfinity, Xumo, Verizon Fios, Cox, DISH, Sling TV, Astound, and with a Carnegie Hall Membership at the Supporter level and above.";
+            infoDiv.style = 'width: 100%; text-align: left; margin-top: 8px;';
+
+            // append that text line right after the buttons
+            parentDiv.appendChild(infoDiv);
+
+            
         }
     }
 
